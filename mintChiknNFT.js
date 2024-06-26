@@ -7,15 +7,10 @@ const { filesFromPath } = require("files-from-path");
 const { json } = require("hardhat/internal/core/params/argumentTypes");
 const fs = require("fs");
 
-const contractAddress = "0x1a2c56152EFa06930E288961e77E0e14C755f3c2";
-// const reciever = "0x9d3cA4CD09715E211Fac067a508A574b772DFE23";
-const privateKey =
-  "aa60b5b24d61bfcd72668ec4730f0bed71c4ce9884caee00ac03ca0db48526f2";
-// const tokenURI =
-//   "https://ipfs.io/ipfs/QmZi3kQLcgVD4TYyjm1jJ8UTHbxWtTTihwBiFS4DCaNXrp";
-
-const apiKeyFilebase = "408C89179AAD6C5AE880";
-const apiSecretFilebase = "8aa7tKZohs6NnrB4zxh4W2hYHZoA0uxDC8aXcdM4";
+const contractAddress = process.env.contractAddress;
+const privateKey=process.env.privateKey;
+const apiKeyFilebase=process.env.apiKeyFilebase;
+const apiSecretFilebase=process.env.apiSecretFilebase;
 
 const getContract = async () => {
   const provider = new ethers.providers.JsonRpcProvider(
